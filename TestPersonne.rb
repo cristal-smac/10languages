@@ -2,7 +2,7 @@
 class Personne
   attr_reader :nom, :prenom # dynamic getter
 
-  def initialize(nom:, prenom:)
+  def initialize(nom:, prenom:) # keywords arguments(hash compatible)
     @nom = nom
     @prenom = prenom
   end
@@ -18,7 +18,7 @@ class Etudiant < Personne
   @nb_etudiant = 0
 
   def initialize(nom:, prenom:, num:)
-    super(nom: nom, prenom: prenom) # call implicit parent arguments
+    super(nom: nom, prenom: prenom) # call parent method
     @num = num
     self.class.nb_etudiant += 1 # ou Etudiant.nb_etudiant += 1
   end
