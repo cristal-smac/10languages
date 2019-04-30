@@ -60,5 +60,12 @@ Langages actuellement disponibles : Java, Python, PHP, Javascript, C++, Scala, R
 - influencé par Eiffel
 - interprété
 - shell interactif (`irb`)
-- version actuelle `ruby -v` (2019) : 2.3.7
+- version actuelle `ruby -v` (2019) : 2.6.3
+- Un message : `puts "hello world !"`
+
+## Crystal Lang
+- influencé par Ruby
+- compilé
+- typage explicite et implicite
+- version actuelle `crystal -v` (2019) : 0.28
 - Un message : `puts "hello world !"`
