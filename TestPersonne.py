@@ -22,7 +22,7 @@ if __name__ == '__main__':
     print(p)
 	
     # TEST 2 : Une collection
-    al1 = [Personne("Duchemin"+str(i),"paul"+str(i)) for i in range(1,10)]
+    al1 = [Personne("Duchemin"+str(i),"paul"+str(i)) for i in range(1,11)]
     for p in al1: print(p)
 	
     # TEST 3 : Polymorphisme
