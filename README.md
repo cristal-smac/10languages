@@ -15,7 +15,7 @@ Langages actuellement disponibles : Java, Python, PHP, Javascript, C++, Scala, R
 # Quelques caractéristiques élémentaires
 
 ## Java
-- compilé (`javac fich.java` pour compiler; java fich pour exécuter)
+- compilé (`javac fich.java` pour compiler; `java fich` pour exécuter)
 - typage explicite
 - chaque instruction se termine avec un ;
 - les blocs sont délimités par `{}`
