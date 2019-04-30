@@ -15,7 +15,12 @@ use Data::Dumper;
         };
         bless($this,$class);  
         return $this;
-    } 
+    }
+
+    sub personneToString {
+        my ($this) = @_;
+        return "$this->{nom} $this->{prenom}";
+    }
 }
 
 {
@@ -31,22 +36,34 @@ use Data::Dumper;
         ++$NB;
         return $this;
     }
+
+    sub personneToString {
+        my ($this) = @_;
+        return "$this->{nom} $this->{prenom} $this->{num} Student";
+    }
 }
 
 # Une instance
 my $p = Personne->new('Duchemin ', 'paul');
-print Dumper($p);
+say $p->personneToString();
 
 # Une Collection
 my @numbers = (1..10);
-my @al1 = map { Personne->new("Duchemin#$_ ", "paul#$_ ")} @numbers;
-print Dumper(\@al1);
+my @al1 = map { Personne->new("Duchemin$_ ", "paul$_ ")} @numbers;
+
+foreach my $p (@al1) {
+    say $p->personneToString();
+}
 
 # Polymorphisme
 my @pnumbers = (1..10);
 my @al2;
 foreach my $pnumber (@pnumbers){
-    push @al2, Personne->new("Duchemin#$pnumber", "paul#$pnumber") if ($pnumber % 2 == 0);
-    push @al2, Etudiant->new("Durand#$pnumber", "jules#$pnumber", $pnumber) if ($pnumber % 2 == 1);
+    push @al2, Personne->new("Duchemin$pnumber", "paul$pnumber") if ($pnumber % 2 == 0);
+    push @al2, Etudiant->new("Durand$pnumber", "jules$pnumber", $pnumber) if ($pnumber % 2 == 1);
 }
-print Dumper(\@al2); say "Nombre d'étudiants: $Etudiant::NB";
+
+foreach my $p (@al2) {
+    say $p->personneToString();
+}
+say "Nombre d'étudiants: $Etudiant::NB";
