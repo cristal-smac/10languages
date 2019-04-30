@@ -17,7 +17,8 @@ Langages actuellement disponibles : Java, Python, PHP, Javascript, C++, Scala, R
 ## Java
 - compilé (`javac fich.java` pour compiler; `java fich` pour exécuter)
 - typage explicite
-- chaque instruction se termine avec un ;
+- console interactive (`jshell`)
+- chaque instruction se termine avec un `;`
 - les blocs sont délimités par `{}`
 - version actuelle : `java -version` (2019) : 11.0
 - un message : `System.out.println("hello world!");`
