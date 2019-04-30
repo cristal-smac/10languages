@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+  <HEAD>
+    <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <TITLE>Page de test</TITLE>
+  </HEAD>
+  <BODY>
+    <script type="text/javascript">
+/*
+* Javascript est un langage de prototypes
+* Activer la console JavaScript dans le navigateur : 
+* on peut interactivement accéder aux objets dans la console.
+* Afficher : console.log(), alert() (popup) , document.write() (arbre dom, HTML)
+* Pas de toString() appelé automatiquement
+* Déclaration des variables : avec let c'est local, avec var c'est global
+*/
+
+
+      'use strict';
+      
+      class Personne
+      {
+	  constructor(nom,prenom)
+	  {this.nom=nom;
+	   this.prenom=prenom;
+	  }
+	  
+	  toString() {return this.nom+" "+this.prenom;} 
+      }
+
+      
+ 
+      /* Qu'on écrivait auparavant */
+      /*
+  var Personne = function(nom,prenom)
+  {
+      this.nom=nom;
+      this.prenom=prenom;
+
+      this.toString = function(){return this.nom+" "+this.prenom ; }
+  }
+      */
+
+      
+      class Etudiant extends Personne
+      {
+	  constructor(nom,prenom,num)
+	  {
+	      super(nom,prenom);
+	      this.num=num;
+	      Etudiant.NB++;
+	  }
+
+	  toString(){return super.toString()+" "+this.num ; }
+      }
+      Etudiant.NB=0;
+
+      
+  // TEST 1 : Une instance    
+  var p = new Personne("Duchemin","paul");
+  console.log(p.toString());
+
+      // TEST 2 : Une collection
+      var al1 = new Array();
+      for (let i=1;i<=10;i++)
+	  al1.push(new Personne("Duchemin"+i,"paul"+i));
+      console.log(al1.length);
+      for (let i=0;i<al1.length;i++){console.log(al1[i].toString());}
+
+      // TEST 3 : Polymorphisme
+      var al2 = new Array();
+      for (let i=1;i<=10;i++)
+	  if (i%2==0)
+	      al2.push(new Personne("Duchemin"+i,"paul"+i));
+          else
+	      al2.push(new Etudiant("Durand"+i,"jules"+i,i));
+      // for (let i=0;i<al2.length;i++){console.log(al2[i].toString());}
+      al2.forEach(function(x){console.log(x.toString());});
+
+
+      console.log("NB etudiants "+Etudiant.NB);
+      
+</script></body></html>
