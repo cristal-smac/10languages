@@ -6,7 +6,7 @@ L'objectif de cette page n'est pas de fournir un cours sur les différents langa
 
 Nous fournissons ici  une base commune permettra à chacun de partir de l'écriture qu'il connait bien (son langage de porgrammation habituel) pour migrer facilement vers l'un des autres langages disponibles.
 
-Le programme écrit est le même dans tous les langages : Une classe, une instance, un héritage, une méthode affinée, une variable statique, une collection, une forme de polymorphisme. L'exemple fourni est très simple volontairement et dans un seul fichier : Une classe `Personne(nom,prenom)` avec une instance de cet objet. Une classe `Etudiant` qui en hérite et l'affine avec un `num` et une variable de classe `NB` permettant de compter les instances créées. Une collection d'individus, une fois sur deux une simple personne, une fois sur deux un étudiant, pour illustrer la surcharge de méthode. La seule méthode dans ces objets est la méthode `toString` (ou son équivalent s'il existe) qui permet son affichage texte.
+Le programme écrit est le même dans tous les langages : Une classe, une instance, un héritage, une méthode affinée, une variable statique, une collection, une forme de polymorphisme. L'exemple fourni est très simple volontairement et dans un seul fichier : Une classe `Personne(nom,prenom)` avec une instance de cet objet. Une classe `Etudiant` qui en hérite et l'affine avec un `num` et une variable de classe `NB` permettant de compter les instances créées. Une collection d'individus, une fois sur deux une simple personne, une fois sur deux un étudiant, pour illustrer la surcharge de méthode. La seule méthode dans ces objets est la méthode d'affichage implicite (si elle existe) qui permet son affichage texte.
 
 Langages actuellement disponibles : Java, Python, PHP, Javascript, C++, Scala, Ruby, Perl, Crystal
 
@@ -22,6 +22,7 @@ Langages actuellement disponibles : Java, Python, PHP, Javascript, C++, Scala, R
 - les blocs sont délimités par `{}`
 - version actuelle : `java -version` (2019) : 11.0
 - un message : `System.out.println("hello world!");`
+- methode d'affichage implicite d'un objet : `toString`
 
 ## C++
 - compilé (`g++ fich.cpp` fournit un `a.out` exécutable)
@@ -37,6 +38,7 @@ Langages actuellement disponibles : Java, Python, PHP, Javascript, C++, Scala, R
 - blocs définis par indentation
 - version actuelle : `python -V` (2019) : 3.7
 - un message : `print("hello world!")`
+- methode d'affichage implicite d'un objet : `__str__`
 
 ## PHP 7
 - influencé par C
@@ -62,6 +64,7 @@ Langages actuellement disponibles : Java, Python, PHP, Javascript, C++, Scala, R
 - shell interactif (`irb`)
 - version actuelle `ruby -v` (2019) : 2.6.3
 - Un message : `puts "hello world !"`
+- methode d'affichage implicite d'un objet : `to_s`
 
 ## Crystal Lang
 - influencé par Ruby
@@ -69,3 +72,4 @@ Langages actuellement disponibles : Java, Python, PHP, Javascript, C++, Scala, R
 - typage explicite et implicite
 - version actuelle `crystal -v` (2019) : 0.28
 - Un message : `puts "hello world !"`
+- methode d'affichage implicite d'un objet : `to_s`
