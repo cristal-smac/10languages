@@ -2,7 +2,7 @@ class Personne:
     def __init__(self,nom,prenom):
         self.nom=nom
         self.prenom=prenom
-    def __repr__(self):
+    def __str__(self):
         return self.nom+" "+self.prenom
 
 class Etudiant(Personne):
@@ -11,8 +11,8 @@ class Etudiant(Personne):
         super().__init__(nom,prenom)
         self.num=num
         Etudiant.NB+=1
-    def __repr__(self):
-        return super().__repr__()+" Student "+str(self.num)
+    def __str__(self):
+        return super().__str__()+" Student "+str(self.num)
     
 
 
