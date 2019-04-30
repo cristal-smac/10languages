@@ -2,9 +2,9 @@
 
 How to write a basic Object Oriented Program (OOP) in several languages ?
 
-L'objectif de cette page n'est pas de fournir un cours sur les différents langages ou sur la POO, mais de donner un exemple synthétique, le plus court possible, illustrant les concepts de base de la POO. Elle n'a d'intérêt que pour ceux qui connaissent déjà les bases de la POO avec un langage donnée.
+L'objectif de cette page n'est pas de fournir un cours sur les différents langages ou sur la POO, mais de donner un exemple synthétique, le plus court possible, illustrant les concepts de base de la POO. Elle n'a d'intérêt que pour ceux qui connaissent déjà les bases de la POO avec un langage donné.
 
-Nous fournissons ici  une base commune permettra à chacun de partir de l'écriture qu'il connait bien (son langage de porgrammation habituel) pour migrer facilement vers l'un des autres langages.
+Nous fournissons ici  une base commune permettra à chacun de partir de l'écriture qu'il connait bien (son langage de porgrammation habituel) pour migrer facilement vers l'un des autres langages disponibles.
 
 Le programme écrit est le même dans tous les langages : Une classe, une instance, un héritage, une méthode affinée, une variable statique, une collection, une forme de polymorphisme. L'exemple fourni est très simple volontairement et dans un seul fichier : Une classe `Personne(nom,prenom)` avec une instance de cet objet. Une classe `Etudiant` qui en hérite et l'affine avec un `num` et une variable de classe `NB` permettant de compter les instances créées. Une collection d'individus, une fois sur deux une simple personne, une fois sur deux un étudiant, pour illustrer la surcharge de méthode. La seule méthode dans ces objets est la méthode `toString` (ou son équivalent s'il existe) qui permet son affichage texte.
 
