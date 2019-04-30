@@ -32,11 +32,11 @@ p = Personne.new("Duchemin ", "paul")
 puts p
 
 # Une Collection
-al1 = (1...10).map { |i| Personne.new("Duchemin#{i}", "paul#{i}").to_s }
+al1 = (1..10).map { |i| Personne.new("Duchemin#{i}", "paul#{i}").to_s }
 al1.each { |p| puts p }
 
 # Polymorphisme
-al2 = (1...10).map do |i|
+al2 = (1..10).map do |i|
   i.even? ? Personne.new("Duchemin#{i}", "Paul#{i}") : Etudiant.new("Durand#{i}", "jules#{i}", i)
 end
 al2.each { |p| puts p }; puts "Nombre d'étudiants: #{Etudiant.nb_etudiant}"
