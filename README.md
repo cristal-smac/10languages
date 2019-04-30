@@ -57,7 +57,7 @@ Langages actuellement disponibles : Java, Python, PHP, Javascript, C++, Scala, R
 - Un message : `print("hello world!")`
 
 ## Ruby
-- influencé par Eiffel
+- influencé par Smalltalk
 - interprété
 - shell interactif (`irb`)
 - version actuelle `ruby -v` (2019) : 2.6.3
