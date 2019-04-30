@@ -24,16 +24,16 @@ Fournir une base commune permettra à chacun de partir de l'écriture qu'il conn
 - compilé
 - typage explicite
 - chaque instruction se termine avec un ;
-- les blocs sont délimités par {}
-- version actuelle : java -version (2019) : 11.0
-- un message : System.out.println("hello world!");
+- les blocs sont délimités par `{}`
+- version actuelle : `java -version` (2019) : 11.0
+- un message : `System.out.println("hello world!");`
 
 
 ## C++
 - compilé
 - typage explicite
 - allocation manuelle
-- un message : cout << "hello world!" << endl;
+- un message : `cout << "hello world!" << endl;`
 
 
 ## Python 3
@@ -42,12 +42,12 @@ Fournir une base commune permettra à chacun de partir de l'écriture qu'il conn
 - typage dynamique
 - une instruction par ligne
 - blocs définis par indentation
-- version actuelle : python -V (2019) : 3.7
-- un message : print("hello world!")
+- version actuelle : `python -V` (2019) : 3.7
+- un message : `print("hello world!")`
 
-- python         mode interactif
-- python fich    execution du fichier
-- python -i fich execution du fichier et reste en interactif
+- `python`         mode interactif
+- `python fich`    execution du fichier
+- `python -i fich` execution du fichier et reste en interactif
 
 
 ## PHP
@@ -55,15 +55,15 @@ Fournir une base commune permettra à chacun de partir de l'écriture qu'il conn
 - interprété
 - shell interactif
 - typage dynamique
-- chaque instruction se termine avec un ;
-- chaque variable est préfixée par un $
-- les blocs sont délimités par {}
-- version actuelle php -version (2019) : 7.1.3
-- Un message : echo("hello world!");
+- chaque instruction se termine avec un `;`
+- chaque variable est préfixée par un `$`
+- les blocs sont délimités par `{}`
+- version actuelle `php -version` (2019) : 7.1.3
+- Un message : `echo("hello world!");`
 
 
-- php -a         mode interactif
-- php -f fich    execution du fichier
+- `php -a`         mode interactif
+- `php -f fich`    execution du fichier
 
 
 ## Javascript
@@ -71,13 +71,13 @@ Fournir une base commune permettra à chacun de partir de l'écriture qu'il conn
 - shell interactif (dans une console web d'un navigateur)
 - typage dynamique faible
 - langage de prototypes. Un objet n’est jamais qu’une collection de clés et de valeurs
-- Un message : print("hello world!")
+- Un message : `print("hello world!")`
 
 - Mode interactif dans la console du navigateur
 
 ## Ruby
 - influencé par Eiffel
 - interprété
-- shell interactif (irb)
-- version actuelle ruby -v (2019) : 2.3.7
-- Un message : puts "hello world !"
+- shell interactif (`irb`)
+- version actuelle `ruby -v` (2019) : 2.3.7
+- Un message : `puts "hello world !"`
