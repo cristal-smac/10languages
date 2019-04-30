@@ -15,4 +15,4 @@ Une classe, une instance, un héritage, une méthode affinée, une variable stat
 - Perl
 - Crystal
 
-Fournir une base commune permettra à chacun de partir de l'écriture qu'il connait bien (son langage de porgrammation habituel) pour migrer vers l'un des autres langages.
+Fournir une base commune permettra à chacun de partir de l'écriture qu'il connait bien (son langage de programmation habituel) pour migrer vers l'un des autres langages.
