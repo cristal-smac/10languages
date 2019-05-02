@@ -83,6 +83,7 @@ Langages actuellement disponibles : Java, Python, PHP, Javascript, C++, Scala, R
 - compilé
 - typage explicite et implicite
 - version actuelle `crystal -v` (2019) : 0.28
+- Compilation : `crystal build --release TestPersonne.cr`
 - Un message : `puts "hello world !"`
 - methode d'affichage implicite d'un objet : `to_s`
 
@@ -92,4 +93,5 @@ Langages actuellement disponibles : Java, Python, PHP, Javascript, C++, Scala, R
 - compilé
 - typage statique
 - Langage impératif et concurrent
+- Compilation : `go build -o TestPersonne TestPersonne.go`
 - Une message : `fmt.Println("Hello, world")`
