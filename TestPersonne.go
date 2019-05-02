@@ -1,5 +1,5 @@
 /* Golang version 1.12
- go build -o TestPersonne TestPersonne
+ go build -o TestPersonne TestPersonne.go
 */
 
 package main
