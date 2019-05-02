@@ -86,7 +86,7 @@ Langages actuellement disponibles : Java, Python, PHP, Javascript, C++, Scala, R
 - Un message : `puts "hello world !"`
 - methode d'affichage implicite d'un objet : `to_s`
 
-## Golang
+## Golang
 
 - influencé par C
 - compilé
