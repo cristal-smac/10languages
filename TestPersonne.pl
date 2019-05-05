@@ -42,5 +42,9 @@ my @al1 = map { Personne->new("Duchemin$_ ", "paul$_ ")} my @numbers = (1..10);
 print map{$_->toString() . "\n"} @al1;
 
 # Polymorphisme
-my @al2 = map { if ($_ % 2 == 0) {Personne->new("Duchemin$_ ", "paul$_ ")} else { Etudiant->new("Durand$_", "jules$_", $_)} } my @numbers = (1..10);
+my @al2 = map { 
+  if ($_ % 2 == 0) {
+    Personne->new("Duchemin$_ ", "paul$_ ")} 
+  else { 
+    Etudiant->new("Durand$_", "jules$_", $_)} } my @numbers = (1..10);
 print map{$_->toString() . "\n"} @al2; say "Nombre d'étudiants: $Etudiant::NB";
