@@ -1,69 +1,46 @@
 #!/usr/bin/env perl
-use strict;
-use warnings;
-use 5.010;
-use Attribute::Abstract;
-use Data::Dumper;
+use 5.24.1;
+use experimental qw( signatures );
 
-{
-    package Personne;
-    sub new {
-        my ($class, $nom, $prenom) = @_;
-        my $this = {
-        		nom => $nom,
-                prenom => $prenom
-        };
-        bless($this,$class);  
-        return $this;
-    }
-
-    sub personneToString {
-        my ($this) = @_;
-        return "$this->{nom} $this->{prenom}";
-    }
+package Personne;
+sub new ($class, $nom, $prenom){
+    my $this = {
+      	nom => $nom,
+        prenom => $prenom
+    };
+    bless($this,$class);  
+    return $this;
 }
 
-{
-    package Etudiant;
-    our @ISA = qw(Personne);
-    our $NB = 0;
+sub toString ($this){
+    return "$this->{nom} $this->{prenom}";
+}
 
-    sub new {
-	    my ($class, $nom, $prenom, $num) = @_;   
-        my $this = $class->SUPER::new($nom, $prenom);
-        bless($this, $class);
-        $this->{num} = $num;
-        ++$NB;
-        return $this;
-    }
+package Etudiant;
+our @ISA = qw(Personne);
+our $NB = 0;
 
-    sub personneToString {
-        my ($this) = @_;
-        return "$this->{nom} $this->{prenom} $this->{num} Student";
-    }
+sub new ($class, $nom, $prenom, $num){
+    my $this = $class->SUPER::new($nom, $prenom);
+    $this->{num} = $num;
+    bless($this, $class);
+    ++$NB;
+    return $this;
+}
+
+sub toString ($this){
+    my $parent = $this->SUPER::toString();
+    return "$parent Student $this->{num}";
 }
 
 # Une instance
 my $p = Personne->new('Duchemin ', 'paul');
-say $p->personneToString();
+say $p->toString();
 
 # Une Collection
-my @numbers = (1..10);
-my @al1 = map { Personne->new("Duchemin$_ ", "paul$_ ")} @numbers;
-
-foreach my $p (@al1) {
-    say $p->personneToString();
-}
+my @al1 = map { Personne->new("Duchemin$_ ", "paul$_ ")} my @numbers = (1..10);
+print map{$_->toString() . "\n"} @al1;
 
 # Polymorphisme
-my @pnumbers = (1..10);
-my @al2;
-foreach my $pnumber (@pnumbers){
-    push @al2, Personne->new("Duchemin$pnumber", "paul$pnumber") if ($pnumber % 2 == 0);
-    push @al2, Etudiant->new("Durand$pnumber", "jules$pnumber", $pnumber) if ($pnumber % 2 == 1);
-}
-
-foreach my $p (@al2) {
-    say $p->personneToString();
-}
-say "Nombre d'étudiants: $Etudiant::NB";
+my @al2 = map { if ($_ % 2 == 0) {Personne->new("Duchemin$_ ", "paul$_ ")} else { Etudiant->new("Durand$_", "jules$_", $_)} } my @numbers = (1..10);
+print map{$_->toString() . "\n"} @al2; say "Nombre d'étudiants: $Etudiant::NB";
