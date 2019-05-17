@@ -178,10 +178,10 @@ int main(int argc, char **argv)
       // paramètre.
       dautres_gens.push_back(PersonneFactory::creerPersonneOuEtudiant(i));
    }
-   // pour changer, on peut parcourir le vector avec un iterateur Ici,
+   // pour changer, on peut parcourir le vector avec un iterateur. Ici,
    // l'utilisation de l'opérateur préfixé ++it prend tout son sens,
    // car l'opérateur post-fixé (it++) devrait créer une copie
-   // (inutile ici) de l'itérateur avec de retourner le précédent. Le
+   // (inutile ici) de l'itérateur avant de retourner le précédent. Le
    // ++it est donc plus performant sur des objets complexes.
    for (std::vector<Personne *>::iterator it = dautres_gens.begin() ; it != dautres_gens.end() ; ++it)
       // it s'utilise alors comme un "pointeur" vers le contenu du
