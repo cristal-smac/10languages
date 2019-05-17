@@ -63,11 +63,13 @@ public:
    // supprime le constructeur par défaut
    Etudiant(string &nom, string &prenom, int num) : Personne(nom, prenom), num(num)
    {
+      Etudiant::_count++;
    }
 
    // On définit également le constructeur prennant en paramètre des chaînes C
    Etudiant(const char *nom, const char *prenom, int num) : Personne(nom, prenom), num(num)
    {
+      Etudiant::_count++;
    }
    
    // Le mot clé virtual n'est plus obligatoire ici (car la méthode a
@@ -82,11 +84,27 @@ public:
       stream << this->Personne::toString() << " " << this->num;
       return stream.str();
    }
+
+   virtual ~Etudiant() {
+      // Quand l'objet est détruit, on décrémente le nombre d'étudiant.
+      // Cette façon de faire n'est PAS thread safe.
+      Etudiant::_count--;
+   }
+
+   // Un accesseur pour l'attribut statique
+   static int getCount() {
+      return Etudiant::_count;
+   }
 private:
    int num;
+   // Un membre de classe (statique)
+   // Il n'est ici que déclaré, il devra être réservé en dehors de la classe
+   static int _count;
 };
    
-   
+// Les membres de classe doivent être alloués statiquement en dehors de la classe
+int Etudiant::_count = 0;
+
 
 // Une fabrique de personnes ou d'étudiants
 class PersonneFactory {
@@ -189,9 +207,13 @@ int main(int argc, char **argv)
       // Donc: (*it) est un Personne* sur lequel on applique l'opérateur ->
       cout << (*it)->toString() << endl;
 
+   cout << "Il y a " << Etudiant::getCount() << " étudiants" << endl;
+   
    // Il faut également désallouer
    for (int i = 0 ; i < 10 ; ++i)
       delete dautres_gens[i];
+
+   cout << "Il y a " << Etudiant::getCount() << " étudiants" << endl;
    
    return 0;
 }
