@@ -142,7 +142,7 @@ int main(int argc, char **argv)
    
    // Deux solutions possibles
    // - les tableaux classiques
-   // - les classes outils comme std::vector
+   // - les classes outils comme std::vector ou std::list
 
    // On ne montre que vector, mais les tableaux classiques fonctionnent
    // également bien si on connait (à la compilation, ou dynamiquement)
@@ -158,6 +158,8 @@ int main(int argc, char **argv)
       // new.
       des_gens.push_back(PersonneFactory::creerPersonne(i));
    }
+   // le vector implémente l'opérateur [], on peut donc s'en servir
+   // comme d'un tableau
    for (int i = 0 ; i < 10 ; ++i)
       cout << des_gens[i]->toString() << endl;
 
@@ -176,8 +178,16 @@ int main(int argc, char **argv)
       // paramètre.
       dautres_gens.push_back(PersonneFactory::creerPersonneOuEtudiant(i));
    }
-   for (int i = 0 ; i < 10 ; ++i)
-      cout << dautres_gens[i]->toString() << endl;
+   // pour changer, on peut parcourir le vector avec un iterateur Ici,
+   // l'utilisation de l'opérateur préfixé ++it prend tout son sens,
+   // car l'opérateur post-fixé (it++) devrait créer une copie
+   // (inutile ici) de l'itérateur avec de retourner le précédent. Le
+   // ++it est donc plus performant sur des objets complexes.
+   for (std::vector<Personne *>::iterator it = dautres_gens.begin() ; it != dautres_gens.end() ; ++it)
+      // it s'utilise alors comme un "pointeur" vers le contenu du
+      // vecteur qui est lui même un pointeur.
+      // Donc: (*it) est un Personne* sur lequel on applique l'opérateur ->
+      cout << (*it)->toString() << endl;
 
    // Il faut également désallouer
    for (int i = 0 ; i < 10 ; ++i)
