@@ -1,6 +1,7 @@
 #include <iostream>
 #include <sstream>
 #include <cstring>
+#include <vector>
 
 using namespace std;
 
@@ -86,15 +87,101 @@ private:
 };
    
    
-   
+
+// Une fabrique de personnes ou d'étudiants
+class PersonneFactory {
+public:
+   // On fabrique une personne avec un indice
+   static Personne *creerPersonne(int idx) {
+      std::string nom("Duchemin");
+      std::string prenom("Paul");
+      nom += std::to_string(idx);
+      prenom += std::to_string(idx);
+      return new Personne(nom, prenom);
+   }
+   // On fabrique une personne ou un étudiant en fonction de l'indice (pair  personne, impair etudiant)
+   static Personne *creerPersonneOuEtudiant(int idx) {
+      if (0 == (idx % 2))
+         return PersonneFactory::creerPersonne(idx);
+      std::string nom("Durand");
+      std::string prenom("Jules");
+      nom += std::to_string(idx);
+      prenom += std::to_string(idx);
+      return new Etudiant(nom, prenom, idx);
+   }
+};
+
    
 int main(int argc, char **argv)
 {
+   // Test 1 : une instance
+
+   //En C++ la gestion mémoire est la même qu'en C. On peut allouer
+   // notre objet sur la pile (déclaration de variable simple) ou sur
+   // le tas (appel à new, "équivalent" C++ de malloc)
+   // Ici, sur la pile
    Personne p("Mathieu", "Philippe");
 
    cout << "Une personne : " << p.toString() << endl ;
 
-   Etudiant e("Foo", "Bar", 10);
-   cout << "Un etudiant : " << e.toString() << endl ;
+   // Ici, sur le tas. Par contre, on doit maintenant manipuler
+   // l'objet à l'aide d'un pointeur.
+   Etudiant *e = new Etudiant("Foo", "Bar", 10);
+   // Comme e est ici un pointeur, on doit utiliser la notation '->'
+   // pour déréférencer le pointeur et accéder à l'objet.
+   cout << "Un etudiant : " << e->toString() << endl ;
+
+   // Par contre, quand on a terminé avec cette instance, il faut
+   // libérer la mémoire (équivalent du "free" de C). L'appel à delete
+   // va appeller les destructeurs nécessaires et libérer la mémoire.
+   delete e;
+   // Pour l'objet p, l'appel à son destructeur aura lieu quand on
+   // sortira du contexte dans lequel la variable a été déclarée (ici, en sortant du main)
+
+   // Test 2 : une collection
+   
+   // Deux solutions possibles
+   // - les tableaux classiques
+   // - les classes outils comme std::vector
+
+   // On ne montre que vector, mais les tableaux classiques fonctionnent
+   // également bien si on connait (à la compilation, ou dynamiquement)
+   // le nombre exact de personnes.
+   std::vector<Personne*> des_gens;
+
+   for (int i = 0 ; i < 10 ; ++i) {
+      // On utilise une factory pour l'allocation car concaténer des
+      // string et des entiers n'est pas si simple qu'en Java, donc on
+      // regroupe le code dans la factory pour simplifier la lecture.
+      // La méthode PersonneFactory::creerPersonne est une méthode
+      // statique (de classe), qui instancie une personne à l'aide de
+      // new.
+      des_gens.push_back(PersonneFactory::creerPersonne(i));
+   }
+   for (int i = 0 ; i < 10 ; ++i)
+      cout << des_gens[i]->toString() << endl;
+
+   // Il faut également désallouer
+   for (int i = 0 ; i < 10 ; ++i)
+      delete des_gens[i];
+
+   // Test 3 : polymorphisme
+
+   // On utilise encore les pointeurs, seul moyen (avec les
+   // références) d'avoir du polymorphisme
+   std::vector<Personne*> dautres_gens;
+   for (int i = 0 ; i < 10 ; ++i) {
+      // On utilise la même factory, mais avec une méthode qui crée
+      // une personne ou un etudiant en fonction de l'indice passé en
+      // paramètre.
+      dautres_gens.push_back(PersonneFactory::creerPersonneOuEtudiant(i));
+   }
+   for (int i = 0 ; i < 10 ; ++i)
+      cout << dautres_gens[i]->toString() << endl;
+
+   // Il faut également désallouer
+   for (int i = 0 ; i < 10 ; ++i)
+      delete dautres_gens[i];
+   
    return 0;
 }
