@@ -1,6 +1,6 @@
-# Principe
+# Principe (French)
 
-How to write a basic Object Oriented Program (OOP) in several languages ?
+Commeent écrire un programme orienté objet "standard" (OOP) dans plusieurs langages ?
 
 L'objectif de cette page n'est pas de fournir un cours sur les différents langages ou sur la POO, mais de donner un exemple synthétique, le plus court possible, illustrant les concepts de base de la POO. Elle n'a d'intérêt que pour ceux qui connaissent déjà les bases de la POO avec un langage donné.
 
@@ -10,7 +10,21 @@ Le programme écrit est le même dans tous les langages : Une classe, une instan
 
 Langages actuellement disponibles : Java, Python, PHP, Javascript, C++, Scala, Ruby, Perl, Crystal
 
-## Quelques caractéristiques élémentaires
+# Principe (English)
+
+How to write a basic Object Oriented Program (OOP) in several languages ?
+
+The purpose of this page is not to provide a course on the different languages or on OOP, but to give a synthetic example, as short as possible, illustrating the basic concepts of OOP. It is of interest only to those who already know the basics of OOP with a given language.
+
+We provide here a common basis that will allow everyone to start from the writing they know well (their usual programming language) and easily migrate to one of the other available languages.
+
+The written program is the same in all languages: A class, an instance, an inheritance, a refined method, a static variable, a collection, a form of polymorphism. The example provided is very simple voluntarily and in a single file: A class `Person(name,first name)` with an instance of this object. A `Student` class that inherits it and refines it with a `number` and a `NB` class variable to count the instances created. A collection of individuals, once in two a simple person, once in two a student, to illustrate the method overload. The only method in these objects is the implicit display method (if it exists) that allows its text display.
+
+Actual available languages : Java, Python, PHP, Javascript, C++, Scala, Ruby, Perl, Crystal
+
+
+
+## Some elementary characteristics
 
 ## Java
 
