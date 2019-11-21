@@ -1,6 +1,6 @@
 # Principe (French)
 
-Commeent écrire un programme orienté objet "standard" (OOP) dans plusieurs langages ?
+Comment écrire un programme orienté objet "standard" (OOP) dans plusieurs langages ?
 
 L'objectif de cette page n'est pas de fournir un cours sur les différents langages ou sur la POO, mais de donner un exemple synthétique, le plus court possible, illustrant les concepts de base de la POO. Elle n'a d'intérêt que pour ceux qui connaissent déjà les bases de la POO avec un langage donné.
 
