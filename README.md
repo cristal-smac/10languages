@@ -10,7 +10,7 @@ Le programme écrit est le même dans tous les langages : Une classe, une instan
 
 Langages actuellement disponibles : Java, Python, PHP, Javascript, C++, Scala, Ruby, Perl, Crystal
 
-# Principe (English)
+# Principle (English)
 
 How to write a basic Object Oriented Program (OOP) in several languages ?
 
@@ -108,4 +108,4 @@ Actual available languages : Java, Python, PHP, Javascript, C++, Scala, Ruby, Pe
 - typage statique
 - Langage impératif et concurrent
 - Compilation : `go build -o TestPersonne TestPersonne.go`
-- Une message : `fmt.Println("Hello, world")`
+- Un message : `fmt.Println("Hello, world")`
