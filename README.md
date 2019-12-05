@@ -8,7 +8,7 @@ Nous fournissons ici une base commune permettra à chacun de partir de l'écritu
 
 Le programme écrit est le même dans tous les langages : Une classe, une instance, un héritage, une méthode affinée, une variable statique, une collection, une forme de polymorphisme. L'exemple fourni est très simple volontairement et dans un seul fichier : Une classe `Personne(nom,prenom)` avec une instance de cet objet. Une classe `Etudiant` qui en hérite et l'affine avec un `num` et une variable de classe `NB` permettant de compter les instances créées. Une collection d'individus, une fois sur deux une simple personne, une fois sur deux un étudiant, pour illustrer la surcharge de méthode. La seule méthode dans ces objets est la méthode d'affichage implicite (si elle existe) qui permet son affichage texte.
 
-Langages actuellement disponibles : Java, Python, PHP, Javascript, C++, Scala, Ruby, Perl, Crystal
+Langages actuellement disponibles : Java, Python, PHP, Javascript, C++, Scala, Ruby, Perl, Crystal, Go
 
 # Principle (English)
 
@@ -20,7 +20,7 @@ We provide here a common basis that will allow everyone to start from the writin
 
 The written program is the same in all languages: A class, an instance, an inheritance, a refined method, a static variable, a collection, a form of polymorphism. The example provided is very simple voluntarily and in a single file: A class `Person(name,first name)` with an instance of this object. A `Student` class that inherits it and refines it with a `number` and a `NB` class variable to count the instances created. A collection of individuals, once in two a simple person, once in two a student, to illustrate the method overload. The only method in these objects is the implicit display method (if it exists) that allows its text display.
 
-Actual available languages : Java, Python, PHP, Javascript, C++, Scala, Ruby, Perl, Crystal
+Actual available languages : Java, Python, PHP, Javascript, C++, Scala, Ruby, Perl, Crystal, Go
 
 
 
