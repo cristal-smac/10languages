@@ -55,6 +55,18 @@ Actual available languages : Java, Python, PHP, Javascript, C++, Scala, Ruby, Pe
 - un message : `print("hello world!")`
 - methode d'affichage implicite d'un objet : `__str__`
 
+## Julia  
+
+- interprété
+- typage dynamique
+- shell interactif (`julia -i` : mode interactif; `julia fich` : execution du fichier ; `julia -i fich` : execution du fichier et reste en interactif)
+- une instruction par ligne
+- blocs définis par indentation
+- version actuelle : `julia -v` (2023) : 1.9.3
+- un message : `print("hello world!")`
+- methode d'affichage implicite d'un objet : `__str__`, `__repr__`
+
+
 ## PHP 7
 
 - influencé par C
